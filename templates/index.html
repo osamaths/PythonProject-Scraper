@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+  </head>
+  <body>
+      <div class="container">
+        {% for chapter in chapters %} <!-- get "chapter" each time -->
+          <h3>Chapter: {{chapter.chapterName}}</h3>
+          <div class="well"> <!-- get "unit" each time -->
+              <h4>Unit: {{chapter.unitName}}</h4>
+              <ul>
+                {% for link in chapter.links %} <!-- get "link" each time -->
+                    <li><a href="{{link}}">{{link}}</a></li>
+                {% endfor %}
+              </ul>
+          </div>
+        {% endfor %}
+      </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
